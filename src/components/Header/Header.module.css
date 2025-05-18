@@ -1,0 +1,39 @@
+.header {
+  position: relative; /* ← 必須！絶対配置の基準にする */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #021f54;
+  color: white;
+  padding: 0.75rem 1rem;
+  height: 60px; /* 高さ固定で見た目が安定する */
+}
+
+.menuButton {
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  outline: none;
+  z-index: 1100; /* タイトルの下に隠れないように */
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.menuButton:focus {
+  outline: none;
+}
+
+.menuButton.open {
+  transform: rotate(90deg);
+}
