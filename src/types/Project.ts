@@ -1,4 +1,3 @@
-// src/types/Project.ts
 import type { Task } from "./Task";
 
 export type Project = {

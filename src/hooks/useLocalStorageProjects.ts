@@ -1,4 +1,3 @@
-// src/hooks/useLocalStorageProjects.ts
 import { useEffect, useState } from "react";
 import type { Project } from "../types/Project";
 

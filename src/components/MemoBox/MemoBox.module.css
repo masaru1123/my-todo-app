@@ -1,5 +1,5 @@
 .memoBox {
-  margin-top: auto; /* 上が詰まっていれば自然に下に下がる */
+  margin-top: auto; 
   padding-top: 2rem;
   display: flex;
   justify-content: center;

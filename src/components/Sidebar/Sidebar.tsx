@@ -13,7 +13,6 @@ interface Props {
 
 export default function Sidebar({
   isOpen,
-  //onClose,
   projects,
   currentId,
   onSelect,

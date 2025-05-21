@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import TodoList from "./components/TodoList/TodoList";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import styles from "./App.module.css";
-import type { Task } from "./types/Task";
 import type { Project } from "./types/Project";
 import { useLocalStorageProjects } from "./hooks/useLocalStorageProjects";
 
@@ -60,7 +59,7 @@ export default function App() {
 
     const newProject: Project = {
       id: crypto.randomUUID(),
-      title: "", // ← 新規作成時は空でOK（次回保存時に補正）
+      title: "", 
       tasks: [],
       memo: "",
       createdAt: new Date().toISOString(),
