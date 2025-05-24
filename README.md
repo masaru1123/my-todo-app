@@ -37,3 +37,11 @@
 ## スクリーンショット
 
 ![Todoアプリ画面](./public/screenshot.png)
+
+---
+
+##  作者
+
+- masaru1123（React／TypeScript 学習中）
+- 他のアプリもGitHubで順次公開予定です
+
