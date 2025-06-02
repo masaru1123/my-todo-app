@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import TodoList from "./components/TodoList/TodoList";
@@ -6,6 +6,7 @@ import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import styles from "./App.module.css";
 import type { Project } from "./types/Project";
 import { useLocalStorageProjects } from "./hooks/useLocalStorageProjects";
+import { useApiProjects } from "./hooks/useApiProjects";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function App() {
   const [memo, setMemo] = useState(projects[currentIndex]?.memo || "");
 
   const currentProject = projects[currentIndex];
+  const [_, saveToApi] = useApiProjects();
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
 
@@ -27,6 +29,16 @@ export default function App() {
     });
     setProjects(updated);
   };
+
+  
+  // プロジェクト変更時にAPIへ自動保存
+  useEffect(() => {
+    if (projects.length > 0) {
+      saveToApi(projects);
+    }
+  }, [projects]);
+
+  
 
   const handleEditTask = (id: string, newText: string) => {
     const updated = [...projects];
