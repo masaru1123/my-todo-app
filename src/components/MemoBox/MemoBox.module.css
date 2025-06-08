@@ -9,8 +9,8 @@
 .textarea {
   width: 90%;
   max-width: 600px;
-  background-color: #ffffff !important; /* 常に白背景 */
-  color: #000000 !important;           /* 常に黒文字 */
+  background-color: #ffffff !important;
+  color: #000000 !important;           
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--border-color);
